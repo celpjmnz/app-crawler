@@ -9,7 +9,6 @@ export const detail = async (id: string) => {
   const data: Product = res.data.data.product;
 
   const varieties = data.varieties.find((i) => i.id === Number(id));
-  console.log(id);
 
   const nQ = varieties ? `${varieties.size} ${varieties.unit}` : undefined;
   const product: FinalProduct = {
