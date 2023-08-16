@@ -1,3 +1,6 @@
+import * as mongoose from "mongoose";
+
+//      Interfaces
 export interface Product {
   id: string;
   name: string;
@@ -29,3 +32,18 @@ export interface Category {
   id: number;
   name: string;
 }
+
+//      MongoDB schema
+export const ProductSchema = new mongoose.Schema({
+  id: String,
+  name: String,
+  brand: String,
+  category: String,
+  description: String,
+  price: String,
+  netQuantity: String,
+  available: String,
+});
+
+//      MongoDB model
+export const ProductModel = mongoose.model("ProductModel", ProductSchema);
